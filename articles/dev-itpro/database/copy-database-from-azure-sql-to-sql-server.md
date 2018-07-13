@@ -148,7 +148,7 @@ declare
 @userSQL varchar(1000)
 set quoted_identifier off
 declare userCursor CURSOR for
-select 'DROP USER ' + name
+select 'DROP USER [' + name + ']' 
 from sys.sysusers
 where issqlrole = 0 and hasdbaccess = 1 and name <> 'dbo'
 OPEN userCursor
